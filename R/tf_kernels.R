@@ -214,11 +214,11 @@ tf_cosine <- function(X, X_prime, lengthscales, variance, active_dims) {
 }
 
 # periodic kernel
-tf_periodic <- function(X, X_prime, lengthscale, variance, period, active_dims) {
+tf_periodic <- function(X, X_prime, lengthscale, variance, period, active_dim) {
   
   # pull out active dimensions
-  X <- tf_cols(X, active_dims)
-  X_prime <- tf_cols(X_prime, active_dims)
+  X <- tf_cols(X, active_dim)
+  X_prime <- tf_cols(X_prime, active_dim)
 
   # calculate squared distances (scaled if needed)
   exp_arg <- fl(pi) * absolute_dist(X, X_prime) / period

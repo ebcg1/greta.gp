@@ -49,7 +49,7 @@ mat52(lengthscales, variance, columns = seq_along(lengthscales))
 
 cosine(lengthscales, variance, columns = seq_along(lengthscales))
 
-periodic(period, lengthscale, variance)
+periodic(period, lengthscale, variance, columns = seq_along(lengthscale))
 }
 \arguments{
 \item{variance, variances}{(scalar/vector) the variance of a Gaussian process

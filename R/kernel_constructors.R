@@ -230,13 +230,14 @@ cosine <- function(lengthscales, variance, columns = seq_along(lengthscales)) {
 
 #' @rdname kernels
 #' @export
-periodic <- function(period, lengthscale, variance) {
+periodic <- function(period, lengthscale, variance, columns = seq_along(lengthscale)) {
   greta_kernel("periodic",
     tf_name = "tf_periodic",
     parameters = list(
       lengthscale = lengthscale,
       variance = variance,
       period = period
-    )
+    ),
+    arguments = list(active_dim = check_active_dims(columns, lengthscale))
   )
 }
